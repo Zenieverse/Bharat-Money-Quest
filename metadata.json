@@ -1,0 +1,7 @@
+{
+  "name": "Bharat Money Quest",
+  "description": "A gamified financial literacy app teaching budgeting, saving, and digital safety through real-life Indian scenarios.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

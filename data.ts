@@ -121,6 +121,62 @@ export const QUESTS: Quest[] = [
     difficulty: 'Hard',
     rewardInfo: '80 XP • 50 Coins',
     icon: '📈'
+  },
+  {
+    id: 'q5',
+    title: 'Farmer Credit Strategy',
+    category: 'Beginner',
+    description: 'Manage seasonal income and crop loans.',
+    scenario: 'You are a farmer and need seeds for the next season. You can take a loan from a local moneylender at 5% monthly interest or use your Kisan Credit Card (KCC) at 7% annual interest.',
+    options: [
+      {
+        text: 'Local moneylender (fast cash).',
+        feedback: 'Beware! 5% monthly is 60% annually. This is a debt trap. KCC is much cheaper.',
+        xpReward: 0,
+        coinReward: 0,
+        healthDelta: -25,
+        isCorrect: false
+      },
+      {
+        text: 'Use Kisan Credit Card (KCC).',
+        feedback: 'Smart! KCC provides low-interest institutional credit specifically for farmers. Always choose regulated banks.',
+        xpReward: 70,
+        coinReward: 40,
+        healthDelta: 20,
+        isCorrect: true
+      }
+    ],
+    difficulty: 'Medium',
+    rewardInfo: '70 XP • 40 Coins',
+    icon: '🌾'
+  },
+  {
+    id: 'q6',
+    title: 'Household Savings Secret',
+    category: 'Beginner',
+    description: 'Optimize household gold and small savings.',
+    scenario: 'You have some family gold and need money for your child\'s school fees. Should you sell the gold or take a Gold Loan from a bank and repay it slowly?',
+    options: [
+      {
+        text: 'Sell the gold immediately.',
+        feedback: 'Gold is an appreciating asset. Selling it means you lose the future value. A loan preserves ownership.',
+        xpReward: 10,
+        coinReward: 5,
+        healthDelta: -5,
+        isCorrect: false
+      },
+      {
+        text: 'Take a Gold Loan from a bank.',
+        feedback: 'Wise! Gold Loans have lower interest than personal loans. You get the money and keep your gold once repaid.',
+        xpReward: 60,
+        coinReward: 25,
+        healthDelta: 15,
+        isCorrect: true
+      }
+    ],
+    difficulty: 'Medium',
+    rewardInfo: '60 XP • 25 Coins',
+    icon: '👩'
   }
 ];
 
@@ -145,13 +201,46 @@ export const TOOLKIT: ToolkitItem[] = [
     content: 'A score above 750 is considered good. Pay your credit card bills in full and on time to maintain a healthy score.',
     icon: '💳',
     color: 'bg-purple-100 text-purple-600'
+  },
+  {
+    id: 't4',
+    title: 'NCFE Learning',
+    content: 'NCFE promotes financial education across India. Key pillars include Financial Planning, Digital Safety, and Responsible Borrowing.',
+    icon: '🏛️',
+    color: 'bg-orange-100 text-orange-600'
+  },
+  {
+    id: 't5',
+    title: 'Insurance & Risk',
+    content: 'Always have health and life insurance (Term Insurance) to protect your family from financial shocks during emergencies.',
+    icon: '🛡️',
+    color: 'bg-red-100 text-red-600'
   }
 ];
 
-export const DAILY_CHALLENGE: DailyChallenge = {
-  question: 'What is the maximum amount covered by deposit insurance (DICGC) per bank account in India?',
-  options: ['₹1 Lakh', '₹5 Lakhs', '₹10 Lakhs', 'Unlimited'],
-  correctIndex: 1,
-  explanation: 'Since 2020, the DICGC covers up to ₹5 Lakhs per depositor, per bank, including principal and interest.',
-  reward: 20
-};
+export const DAILY_CHALLENGES: DailyChallenge[] = [
+  {
+    question: 'What is the maximum amount covered by deposit insurance (DICGC) per bank account in India?',
+    options: ['₹1 Lakh', '₹5 Lakhs', '₹10 Lakhs', 'Unlimited'],
+    correctIndex: 1,
+    explanation: 'Since 2020, the DICGC covers up to ₹5 Lakhs per depositor, per bank, including principal and interest.',
+    reward: 20
+  },
+  {
+    question: 'Which of the following is NOT required to be shared with anyone for a safe digital transaction?',
+    options: ['Account Number', 'IFSC Code', 'OTP & UPI PIN', 'Branch Name'],
+    correctIndex: 2,
+    explanation: 'Never share your OTP or UPI PIN. Banks or official reward programs will never ask for them.',
+    reward: 20
+  },
+  {
+    question: 'What does "Compounding" mean in investments?',
+    options: ['Losing money daily', 'Earning interest on interest', 'Saving in a locker', 'Paying extra tax'],
+    correctIndex: 1,
+    explanation: 'Compounding is when you earn returns on both your initial investment and the accumulated interest from previous periods.',
+    reward: 20
+  }
+];
+
+// Default fallback if logic fails
+export const DAILY_CHALLENGE = DAILY_CHALLENGES[0];

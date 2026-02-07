@@ -24,6 +24,8 @@ export interface UserProfile {
   healthScore: number;
   badges: string[];
   completedQuests: string[];
+  lastDailyDate: string | null;
+  hasAnsweredDailyToday: boolean;
 }
 
 export interface QuestChoice {
